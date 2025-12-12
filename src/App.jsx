@@ -7,21 +7,22 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import DestinationsPage from './pages/DestinationsPage';
 import DestinationDetailPage from './pages/DestinationDetailPage';
+import FavoritesPage from './pages/FavoritesPage';
 
 function App() {
   return (
-    <>
+    <div>
       <NavbarComponent />
-      {/* Use container-fluid to allow full-width pages */}
-      <main className="container-fluid mt-4 mb-5 px-4">
+      <main className="container mt-4 mb-5">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/destinations" element={<DestinationsPage />} />
           <Route path="/destinations/:id" element={<DestinationDetailPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

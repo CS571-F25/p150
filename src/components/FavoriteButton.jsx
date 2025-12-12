@@ -1,30 +1,39 @@
 import React, { useState, useEffect } from 'react';
 
 function FavoriteButton({ destinationId }) {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorited, setIsFavorited] = useState(false);
 
+  // Load initial state from localStorage
   useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    setIsFavorite(favorites.includes(destinationId));
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    setIsFavorited(storedFavorites.includes(destinationId));
   }, [destinationId]);
 
-  const toggleFavorite = () => {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const handleFavoriteToggle = () => {
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
     let updatedFavorites;
 
-    if (favorites.includes(destinationId)) {
-      updatedFavorites = favorites.filter(id => id !== destinationId);
+    if (isFavorited) {
+      // Remove from favorites
+      updatedFavorites = storedFavorites.filter(id => id !== destinationId);
     } else {
-      updatedFavorites = [...favorites, destinationId];
+      // Add to favorites
+      updatedFavorites = [...storedFavorites, destinationId];
     }
 
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-    setIsFavorite(!isFavorite);
+    setIsFavorited(!isFavorited);
+
+    // Dispatch a custom event so other components (FavoritesPage) can listen
+    window.dispatchEvent(new Event('favoritesUpdated'));
   };
 
   return (
-    <button className={`btn ${isFavorite ? 'btn-warning' : 'btn-outline-warning'}`} onClick={toggleFavorite}>
-      {isFavorite ? '★ Favorited' : '☆ Favorite'}
+    <button
+      className={`btn ${isFavorited ? 'btn-danger' : 'btn-outline-danger'} btn-sm`}
+      onClick={handleFavoriteToggle}
+    >
+      {isFavorited ? '♥ Favorited' : '♡ Favorite'}
     </button>
   );
 }
