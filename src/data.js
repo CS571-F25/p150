@@ -1,6 +1,9 @@
-import longwood from './assets/longwood.jpg';
-import cityhall from './assets/cityhall.jpg';
-import artMuseum from './assets/artmuseum.jpg';
+import longwood from './assets/longwood.JPG';
+import longwood2 from './assets/longwood2.png';
+import cityhall from './assets/cityhall.JPG';
+import cityhall2 from './assets/cityhall2.png';
+import artmuseum from './assets/artmuseum.JPG';
+import artmuseum2 from './assets/artmuseum2.png';
 
 const destinations = [
   {
@@ -11,7 +14,7 @@ const destinations = [
     description: 'Longwood Garden is a beautiful botanical garden known for its stunning landscapes and seasonal displays.',
     recommendedTime: 'Spring or Summer',
     website: 'https://longwoodgardens.org/',
-    photos: [longwood],
+    photos: [longwood, longwood2],
   },
   {
     id: 2,
@@ -21,7 +24,7 @@ const destinations = [
     description: 'Philadelphia City Hall is an iconic building with historic architecture and a view of the city from the observation deck.',
     recommendedTime: 'All year',
     website: 'https://www.phlvisitorcenter.com/CityHall',
-    photos: [cityhall],
+    photos: [cityhall, cityhall2],
   },
   {
   id: 3,
@@ -31,7 +34,7 @@ const destinations = [
   description: 'The Philadelphia Museum of Art is famous for its extensive art collections and the iconic “Rocky Steps.”',
   recommendedTime: 'All year',
   website: 'https://www.visitpham.org/',
-  photos: [artMuseum],
+  photos: [artmuseum, artmuseum2],
   }
 ];
 
