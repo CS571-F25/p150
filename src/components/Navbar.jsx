@@ -1,11 +1,10 @@
-import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function NavbarComponent() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-      <Container>
+    <Navbar bg="dark" variant="dark" expand="lg" className="w-100">
+      <Container fluid>
         <Navbar.Brand as={Link} to="/">Travel Journal</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

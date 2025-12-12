@@ -10,9 +10,10 @@ import DestinationDetailPage from './pages/DestinationDetailPage';
 
 function App() {
   return (
-    <div>
+    <>
       <NavbarComponent />
-      <main className="container mt-4 mb-5">
+      {/* Use container-fluid to allow full-width pages */}
+      <main className="container-fluid mt-4 mb-5 px-4">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/destinations" element={<DestinationsPage />} />
@@ -20,7 +21,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

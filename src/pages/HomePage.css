@@ -1,0 +1,22 @@
+.homepage-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.homepage-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+.text-shadow {
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
